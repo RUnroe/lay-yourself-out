@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Picker } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 const Header = () => {
   return (
@@ -19,9 +19,7 @@ const PersonalInfo = () => {
       <TextInputSection label='City' placeholder='Salt Lake City'/>
       <TextInputSection label='State' placeholder='UT'/>
       <TextInputSection label='Zip Code' placeholder='12345'/>
-      <Picker>
-        
-      </Picker>
+      <GenderPicker />
     </View>
   );
 }
@@ -29,8 +27,20 @@ const PersonalInfo = () => {
 const TextInputSection = (props) => {
   return (
     <View style={styles.inputSection}>
-      <Text>{props.label}:</Text>
+      <Text style={styles.label}>{props.label}:</Text>
       <TextInput placeholder={props.placeholder}/>
+    </View>
+  );
+}
+
+const GenderPicker = () => {
+  return (
+    <View>
+      <Text style={styles.label}>Gender:</Text>
+      <Picker>
+        <Picker.Item label='Male' value='Male'/>
+        <Picker.Item label='Female' value='Female'/>
+      </Picker>
     </View>
   );
 }
