@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 const Header = () => {
   return (
     <View>
-      
+      <Image style={styles.logo} source={{uri: "https://media.glassdoor.com/sqll/472567/aperture-science-squarelogo-1428491666766.png"}} />
+      <Text style={styles.headerText}>The Form</Text>
     </View>
   );
 }
@@ -14,9 +15,9 @@ const Header = () => {
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Header />
+
     </View>
   );
 }
@@ -28,4 +29,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  headerText: {
+    fontSize: 24
+  },
+  logo: {
+    height:200,
+    width: 200
+    
+  }
 });
