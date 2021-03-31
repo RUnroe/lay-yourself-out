@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, TextInput, Button } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import Slider from '@react-native-community/slider';
 
@@ -29,7 +29,7 @@ const TextInputSection = (props) => {
   return (
     <View style={styles.inputSection}>
       <Text style={styles.label}>{props.label}:</Text>
-      <TextInput placeholder={props.placeholder}/>
+      <TextInput style={styles.textInput} placeholder={props.placeholder}/>
     </View>
   );
 }
@@ -66,10 +66,10 @@ const Submission = () => {
 
 const SliderSection = (props) => {
   return (
-    <View style={styles.sliderSection}>
+    <ScrollView style={styles.sliderSection}>
       <Text style={styles.label}>{props.label}:</Text>
       <Slider style={styles.slider} minimumValue={props.min} maximumValue={props.max} step={props.step}/>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -108,9 +108,29 @@ const styles = StyleSheet.create({
   },
   personalInfo: {
     display:'flex',
-    margin: 5
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: '#def7ff'
   },
   skills: {
-    backgroundColor: '#fea'
+    backgroundColor: '#eee',
+    paddingVertical: 10,
+    paddingHorizontal: 20
+  },
+  textInput: {
+    borderColor: '#999',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    fontSize: 15
+  },
+  label: {
+    fontSize: 15
+  },
+  inputSection: {
+    paddingVertical: 4
+  },
+  sliderSection: {
+    paddingVertical: 4
   }
 });
