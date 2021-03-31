@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
 const Header = () => {
@@ -56,7 +56,7 @@ const Skills = () => {
 const Submission = () => {
   return (
     <View style={styles.submission}>
-      
+      <Button title='Submit' color='#399cc0'/>
     </View>
   );
 }
@@ -67,6 +67,8 @@ export default function App() {
     <View>
       <Header />
       <PersonalInfo />
+      <Skills />
+      <Submission />
     </View>
   );
 }
@@ -91,7 +93,10 @@ const styles = StyleSheet.create({
   logo: {
     height:65,
     width: 65,
+    margin: 5 
+  },
+  personalInfo: {
+    display:'flex',
     margin: 5
-    
   }
 });
