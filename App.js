@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
+import Slider from '@react-native-community/slider';
 
 const Header = () => {
   return (
@@ -48,7 +49,9 @@ const GenderPicker = () => {
 const Skills = () => {
   return (
     <View style={styles.skills}>
-      
+      <SliderSection label='Experience level of HTML' min={0} max={10} step={1}/>
+      <SliderSection label='Experience level of Javascript' min={0} max={10} step={1}/>
+      <SliderSection label='Experience level of UI/UX' min={0} max={10} step={1}/>
     </View>
   );
 }
@@ -61,6 +64,14 @@ const Submission = () => {
   );
 }
 
+const SliderSection = (props) => {
+  return (
+    <View style={styles.sliderSection}>
+      <Text style={styles.label}>{props.label}:</Text>
+      <Slider style={styles.slider} minimumValue={props.min} maximumValue={props.max} step={props.step}/>
+    </View>
+  );
+}
 
 export default function App() {
   return (
@@ -98,5 +109,8 @@ const styles = StyleSheet.create({
   personalInfo: {
     display:'flex',
     margin: 5
+  },
+  skills: {
+    backgroundColor: '#fea'
   }
 });
