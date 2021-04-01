@@ -59,7 +59,7 @@ const Skills = () => {
 const Submission = () => {
   return (
     <View style={styles.submission}>
-      <Button title='Submit' color='#399cc0'/>
+      <Button style={styles.submissionButton} title='Submit' color='#399cc0'/>
     </View>
   );
 }
@@ -75,12 +75,12 @@ const SliderSection = (props) => {
 
 export default function App() {
   return (
-    <View>
+    <ScrollView>
       <Header />
       <PersonalInfo />
       <Skills />
       <Submission />
-    </View>
+    </ScrollView>
   );
 }
 
@@ -132,5 +132,10 @@ const styles = StyleSheet.create({
   },
   sliderSection: {
     paddingVertical: 4
+  },
+  submission: {
+    paddingVertical: 10,
+    alignSelf: 'center',
+    width: 100
   }
 });
